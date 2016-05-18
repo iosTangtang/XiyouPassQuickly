@@ -1,0 +1,41 @@
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\bin\Debug\SocketServerDemo.exe.config
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.csprojResolveAssemblyReference.cache
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\MainWindow.g.cs
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\App.g.cs
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo_MarkupCompile.cache
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo_MarkupCompile.lref
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\bin\Debug\SocketServerDemo.exe
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\bin\Debug\SocketServerDemo.pdb
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\MainWindow.baml
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.g.resources
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.Properties.Resources.resources
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.csproj.GenerateResource.Cache
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.exe
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.pdb
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\bin\Debug\Newtonsoft.Json.dll
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\bin\Debug\Newtonsoft.Json.xml
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\InfoHandle.g.cs
+E:\Microsoft Visual Studio 14.0\Myproject\windows 10\SocketServerDemo\SocketServerDemo\obj\Debug\InfoHandle.baml
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\SocketServerDemo.exe.config
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.exe
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.pdb
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\SocketServerDemo.exe
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\SocketServerDemo.pdb
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\Newtonsoft.Json.dll
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\Newtonsoft.Json.xml
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.csprojResolveAssemblyReference.cache
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\InfoHandle.g.cs
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\MainWindow.g.cs
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\App.g.cs
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo_MarkupCompile.cache
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo_MarkupCompile.lref
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\InfoHandle.baml
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\MainWindow.baml
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.g.resources
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.Properties.Resources.resources
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\SocketServerDemo.csproj.GenerateResource.Cache
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\App.baml
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\obj\Debug\Style\Resource.baml
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\zxing.dll
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\zxing.pdb
+E:\XiYouFastPass\SocketServerDemo\SocketServerDemo\bin\Debug\zxing.xml

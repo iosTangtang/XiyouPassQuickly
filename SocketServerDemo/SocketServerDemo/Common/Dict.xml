@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+
+  <!--功能1-->
+  <Cmd Operation="Win_DiskC" Text="打开c盘" Command="C:"/>
+  <Cmd Operation="Win_DiskD" Text="打开d盘" Command="D:"/>
+  <Cmd Operation="Win_DiskE" Text="打开e盘" Command="E:"/>
+  <Cmd Operation="Win_DiskF" Text="打开f盘" Command="F:"/>
+  <Cmd Operation="Win_Desktop" Text="打开桌面文件" Command="Desktop"/>
+
+  <!--功能3-->
+  <Cmd Operation="Win_Screenshot" Text="截屏" Command="screenshot"/>
+
+  <!--功能4-->
+  <Cmd Operation="Win_Logoff" Text="注销" Command="-l -f"/>
+  <Cmd Operation="Win_Shutdown" Text="关机"  Command="-s -f"/>
+  <Cmd Operation="Win_Sleep" Text="休眠"  Command="-h -f"/>
+  <Cmd Operation="Win_Reset" Text="重启"  Command="-r -f"/>
+
+  <OfficeProgram Operation="Down_PowerPoint" Text="下一页ppt" Command="DownPPt"/>
+  <OfficeProgram Operation="Up_PowerPoint" Text="上一页ppt" Command="UpPPt"/>
+  <OfficeProgram Operation="Close_PowerPoint" Text="关闭ppt" Command="Close"/>
+  <OfficeProgram Operation="Frist_PowerPoint" Text="第一页" Command="FirstPPt"/>
+  <OfficeProgram Operation="Last_PowerPoint" Text="最后一页" Command= "LastPPt"/>
+
+  <!--功能6-->
+  <Cmd Operation="Win_VolumeUp" Text="增大音量" Command="VolUp"/>
+  <Cmd Operation="Win_VolumeDown" Text="减小音量" Command="VolDown"/>
+
+  <!--语音控制Cmd-->
+  <Cmd Operation="Win_mspaint" Text="打开画图" Command="mspaintf"/>
+  <Cmd Operation="Win_calc" Text="打开计算器" Command="calc"/>
+  <Cmd Operation="Win_notepad" Text="打开记事本" Command="notepad"/>
+  <Cmd Operation="Win_cmd" Text="打开命令提示符" Command="cmd"/>
+  <Cmd Operation="Win_write" Text="打开写字板" Command="write"/>
+  <Cmd Operation="Win_mstsc" Text="打开远程桌面连接" Command="mstsc"/>
+  <Cmd Operation="Win_user" Text="打开运行" Command="User"/>
+  <Cmd Operation="Win_taskmgr" Text="打开任务管理器" Command="taskmgr"/>
+  <Cmd Operation="Win_explorer" Text="打开资源管理器" Command="explorer"/>
+  <Cmd Operation="Win_devmgmt.msc" Text="打开设备管理器" Command="devmgmt.msc"/>
+  <Cmd Operation="Win_iexplore.exe" Text="打开IE浏览器" Command="iexplore.exe"/>
+  <Cmd Operation="Win_regedt32" Text="打开注册表" Command="regedt32"/>
+  <Cmd Operation="Win_control" Text="打开控制面板" Command="control"/>
+  <Cmd Operation="Win_narrator" Text="打开讲述人" Command="narrator"/>
+  <Cmd Operation="Close" Text="关闭画图" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭计算器" Command="Close" />
+  <Cmd Operation="Close" Text="关闭记事本" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭录音机" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭命令提示符" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭写字板" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭远程桌面连接" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭运行" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭任务管理器" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭资源管理器" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭设备管理器" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭IE浏览器" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭控制面板" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭讲述人" Command="Close"/>
+  <Cmd Operation="DisConnect" Text="断开连接" Command="disconnect"></Cmd>
+  <!--语音控制OfficeProgram-->
+  <Cmd Operation="Win_winword" Text="打开word" Command="winword"/>
+  <Cmd Operation="Win_powerpnt" Text="打开ppt" Command="powerpnt"/>
+  <Cmd Operation="Win_excel" Text="打开excel" Command="excel"/>
+  <Cmd Operation="Close" Text="关闭word" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭ppt" Command="Close"/>
+  <Cmd Operation="Close" Text="关闭excel" Command="Close"/>
+  <Cmd Operation="Play_powerpnt" Text="放映幻灯片" Command="Play_powerpnt"/>
+  <Cmd Operation="Play_powerpnt" Text="播放ppt" Command="Play_powerpnt"/>
+  <!--语音控制Web-->
+  <Web Operation="Open_Baidu" Text="打开百度" Command="https://www.baidu.com/"/>
+  <Web Operation="Open_Google" Text="打开谷歌" Command="http://www.google.com.hk/search?q="/>
+  <Web Operation="Open_Taobao" Text="打开淘宝" Command="http://s.taobao.com/search?q="/>
+  <Web Operation="Open_Sina" Text="打开新浪" Command="http://www.sina.com.cn/"/>
+  <Web Operation="Open_SinaWeibo" Text="打开新浪微博" Command="http://weibo.com/"/>
+  <Web Operation="Open_Sohu" Text="打开搜狐" Command="http://www.sohu.com/"/>
+  <Web Operation="Open_Tencent" Text="打开腾讯网" Command="http://www.qq.com/"/>
+  <Web Operation="Open_TencentWeibo" Text="打开腾讯微博" Command="http://t.qq.com/"/>
+  <Web Operation="Open_TMALL" Text="打开天猫" Command="https://www.tmall.com/"/>
+  <Web Operation="Open_JD" Text="打开京东" Command="http://www.jd.com/"/>
+
+  <Search Name="百度" EnName="baidu" Command="http://www.baidu.com/s?wd="/>
+  <Search Name="谷歌" EnName="google" Command="http://www.google.com.hk/search?q="/>
+  <Search Name="必应" EnName="bing" Command="http://cn.bing.com/search?q="/>
+  <Search Name="360" EnName="360" Command="http://www.so.com/s?q="/>
+  <Search Name="搜搜" EnName="soso" Command="http://www.soso.com/q?query="/>
+  <Search Name="搜狗" EnName="sogou" Command="http://www.sogou.com/web?query="/>
+  <Search Name="淘宝" EnName="taobao" Command="http://s.taobao.com/search?q="/>
+</Dictionary>

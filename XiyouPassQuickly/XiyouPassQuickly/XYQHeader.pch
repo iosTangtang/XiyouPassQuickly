@@ -1,0 +1,34 @@
+//
+//  XYQHeader.pch
+//  XiyouPassQuickly
+//
+//  Created by Tangtang on 16/5/17.
+//  Copyright © 2016年 Tangtang. All rights reserved.
+//
+
+#ifndef XYQHeader_pch
+#define XYQHeader_pch
+
+#define XYQWidth [UIScreen mainScreen].bounds.size.width
+#define XYQHeight [UIScreen mainScreen].bounds.size.height
+
+
+//socket
+#define SRV_CONNECTED 0                 //已经链接
+#define SRV_CONNECTED_SUC 1             //链接成功
+#define SRV_CONNECTED_FAIL 2            //链接失败
+#define SOCKETOFFLINEBYSERVER   1
+#define SOCKETOFFLINEBYUSER     2
+#define SOCKETOFFLINEBYWIFICUT  3
+#define SOCKET_TIME_OUT 20
+#define WRITE_TIME_OUT  -1
+#define READ_TIME_OUT   -1
+#define MAX_BUFFER      1024
+
+#define APPID       @"7744035"
+#define APIKEY      @"vWyI4RabbVRkxWL0QRsnYidD"
+#define SECRETKEY   @"b6557d0f4d15af9eac1855ec447a3d5b"
+
+#define LEFTSIDE_WIDTH 240
+
+#endif /* XYQHeader_pch */

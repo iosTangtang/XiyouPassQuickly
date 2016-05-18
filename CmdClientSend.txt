@@ -1,0 +1,49 @@
+磁盘操作
+	点击我的电脑
+	XiYouInfo#{"FullName":"我的电脑","FileTyp":null,"Name":"我的电脑","Lable":"我的电脑"}
+		点击桌面
+		XiYouInfo#{"FullName":"Desktop","FileTyp":null,"Name":null,"Lable:”PPTSHOW”}
+		点击D盘
+		XiYouInfo#{"FullName":"D:\\","FileTyp":null,"Name":null,"Lable":”PPTSHOW”}
+			点击D盘文件
+			XiYouInfo#{"FullName":"D:\\BaiduYunDownload","FileTyp":null,"Name":null,"Lable":”PPTSHOW”}
+
+Cmd命令操作
+XiYouInfo#{"Typ":"Cmd","Msg":"Win_Screenshot"}
+
+手势操作
+2.98583364486694,-0.982677161693573,Move,
+
+CmdPPT操作
+上一页XiYouInfo#{"Typ":"Office","Msg":"Up_PowerPoint"}
+
+
+
+Modify
+：
+1.同一个socket，端口10240
+2.使用类
+public class Command
+    {
+        public string Flag{ get; set; }
+        public string Msg { get; set; }
+    }
+	
+	磁盘操作
+		点击我的电脑
+		XiYou#{Flag="2",Msg="{"FullName":"我的电脑","FileTyp":null,"Name":"我的电脑","Lable":"我的电脑"}"}
+			点击桌面
+			XiYou#{Flag="2",Msg={"FullName":"Desktop","FileTyp":null,"Name":null,"Lable:”PPTSHOW”}			
+			点击D盘
+			XiYou#{Flag="2",Msg={"FullName":"D:\\","FileTyp":null,"Name":null,"Lable":”PPTSHOW”}}			
+			点击D盘文件
+			XiYou#{Flag="2",Msg={"FullName":"D:\\BaiduYunDownload","FileTyp":null,"Name":null,"Lable":”PPTSHOW”}			
+	Cmd命令操作
+	XiYou#{{Flag="1",Msg={Typ="Cmd",Msg="Win_Screenshot"}	
+
+	手势操作
+	XiYou#{Typ="3",Msg="2.98583364486694,-0.982677161693573,Move,"}
+
+
+	CmdPPT操作
+	XiYou#{{Flag="1",Msg={Typ="Office",Msg="Up_PowerPoint"}	
