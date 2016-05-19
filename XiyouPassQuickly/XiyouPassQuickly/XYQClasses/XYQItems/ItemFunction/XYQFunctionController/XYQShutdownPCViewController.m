@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.socketServer = [XYQSocketManager socketManager];
+    self.socketServer.socketCmd.socketDelegate = self;
+    
     [self p_initWithView];
 }
 

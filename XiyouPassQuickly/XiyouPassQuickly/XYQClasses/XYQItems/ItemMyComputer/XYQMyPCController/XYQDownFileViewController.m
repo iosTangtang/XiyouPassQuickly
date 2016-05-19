@@ -16,23 +16,29 @@
     int _length;
 }
 
-@property (nonatomic, strong) UIActivityIndicatorView   *activity;
+//@property (nonatomic, strong) UIActivityIndicatorView   *activity;
 @property (nonatomic, assign) int                       icount;
 @property (nonatomic, strong) NSMutableData             *muData;
 @property (nonatomic, copy)   NSString                  *fileName;
 @property (nonatomic, strong) UIWebView                 *webView;
 @property (nonatomic, strong) UILabel                   *titleLabel;
+@property (nonatomic, strong) UIProgressView            *progress;
 
 @end
 
 @implementation XYQDownFileViewController
 
-//- (NSMutableData *)muData {
-//    if (_muData == nil) {
-//        _muData = [NSMutableData data];
-//    }
-//    return _muData;
-//}
+#pragma mark - lazy load
+- (UIProgressView *)progress {
+    if (_progress == nil) {
+        _progress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        _progress.frame = CGRectMake(0, XYQHeight / 20 + XYQHeight / 28, XYQWidth, 0);
+        _progress.trackTintColor = [UIColor whiteColor];
+        _progress.progress = 0;
+        _progress.progressTintColor = [UIColor colorWithRed:121 / 255.0 green:211 / 255.0 blue:249 / 255.0 alpha:1];
+    }
+    return _progress;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -80,12 +86,15 @@
     [self.view addSubview:self.titleLabel];
     
     //初始化缓冲控件
-    self.activity = [[UIActivityIndicatorView alloc]
-                     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activity.frame = CGRectMake(0, 0, XYQWidth / 6, XYQWidth / 6);
-    self.activity.center = self.view.center;
-    self.activity.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:self.activity];
+//    self.activity = [[UIActivityIndicatorView alloc]
+//                     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+//    self.activity.frame = CGRectMake(0, 0, XYQWidth / 6, XYQWidth / 6);
+//    self.activity.center = self.view.center;
+//    self.activity.backgroundColor = [UIColor lightGrayColor];
+//    [self.view addSubview:self.activity];
+    
+    //添加进度条
+    [self.view addSubview:self.progress];
     
     UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     shareButton.frame = CGRectMake(XYQWidth - XYQWidth / 8, XYQHeight / 28, 23, 23);
@@ -125,7 +134,7 @@
     XYQSocketManager *socketServer = [XYQSocketManager socketManager];
     socketServer.socketFile.fileDelegate = self;
     [socketServer.socketFile sendMessage:jsonStr];
-    [self.activity startAnimating];
+//    [self.activity startAnimating];
 }
 
 #pragma mark - SocketFileDelegate
@@ -137,8 +146,11 @@
         NSLog(@"----%d", _length);
     } else if (self.icount > 1) {
         [self.muData appendData:data];
+        
+        //修改进度条的进度
+        [self.progress setProgress:self.muData.length / (float)_length animated:YES];
         if (self.muData.length == _length) {
-            NSLog(@"%d", self.muData.length);
+            NSLog(@"%lu", (unsigned long)self.muData.length);
             [self createFile];
         }
     }
@@ -166,12 +178,15 @@
     
     BOOL succeed = [self.muData writeToFile:pathStr atomically:YES];
     
-    [self.activity stopAnimating];
+//    [self.activity stopAnimating];
     
     if (succeed) {
+        [self.progress removeFromSuperview];
         NSURL *url = [NSURL fileURLWithPath:pathStr];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];
+    } else {
+        [self showMessage:@"加载文件失败"];
     }
     
 }

@@ -175,10 +175,10 @@
 }
 
 - (void) VoiceButtonAction:(UIButton *)sender {
-//    if (![self.socketManager.socketCmd isConnected]) {
-//        [self showMessage:@"还未链接服务器"];
-//        return;
-//    }
+    if (![self.socketManager.socketCmd isConnected]) {
+        [self showMessage:@"还未链接服务器"];
+        return;
+    }
     [self initWithVoice];
 }
 
