@@ -42,8 +42,9 @@
     self.title = @"遥控关机";
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(100, 200, 60, 60);
-    [button setTitle:@"遥控电脑" forState:UIControlStateNormal];
+    button.frame = CGRectMake(XYQWidth / 2.0 - 30, XYQHeight / 2.0 - 30, 60, 60);
+//    [button setTitle:@"遥控电脑" forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"Butter"] forState:UIControlStateNormal];
     [button setTintColor:[UIColor whiteColor]];
     [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];

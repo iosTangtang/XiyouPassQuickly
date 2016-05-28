@@ -48,43 +48,93 @@
     
     UIButton *offPPT = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     offPPT.tag = 0;
-    offPPT.frame = CGRectMake(XYQWidth / 2 - XYQWidth / 8, XYQHeight / 4, XYQWidth / 4, XYQHeight / 20);
-    [offPPT setTitle:@"关闭PPT" forState:UIControlStateNormal];
+    offPPT.frame = CGRectMake(XYQWidth / 2.0 - 15, XYQHeight / 2.0 - 15, 30, 30);
+    [offPPT setBackgroundImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
     [offPPT setTintColor:[UIColor whiteColor]];
     [offPPT addTarget:self action:@selector(allPPT:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:offPPT];
     
-    UIButton *nextPPT = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    nextPPT.tag = 1;
-    nextPPT.frame = CGRectMake(XYQWidth / 2 - XYQWidth / 3, XYQHeight / 3, XYQWidth / 4, XYQHeight / 20);
-    [nextPPT setTitle:@"上一页" forState:UIControlStateNormal];
-    [nextPPT setTintColor:[UIColor whiteColor]];
-    [nextPPT addTarget:self action:@selector(allPPT:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:nextPPT];
+    UILabel *offLabel = [[UILabel alloc] initWithFrame:CGRectMake(XYQWidth / 2.0 - 20, XYQHeight / 2.0 + 15, 40, 20)];
+    offLabel.text = @"关闭";
+    offLabel.font = [UIFont systemFontOfSize:12.f];
+    offLabel.textColor = [UIColor whiteColor];
+    offLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:offLabel];
     
     UIButton *prePPT = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    prePPT.tag = 2;
-    prePPT.frame = CGRectMake(XYQWidth / 2 + XYQWidth / 8, XYQHeight / 3, XYQHeight / 4, XYQHeight / 20);
-    [prePPT setTitle:@"下一页" forState:UIControlStateNormal];
+    prePPT.tag = 1;
+    prePPT.frame = CGRectMake(XYQWidth / 2.0 - 85, XYQHeight / 2.0 - 15, 20, 30);
+    [prePPT setBackgroundImage:[UIImage imageNamed:@"pre"] forState:UIControlStateNormal];
     [prePPT setTintColor:[UIColor whiteColor]];
     [prePPT addTarget:self action:@selector(allPPT:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:prePPT];
     
+    UILabel *preLabel = [[UILabel alloc] initWithFrame:CGRectMake(XYQWidth / 2.0 - 90, XYQHeight / 2.0 + 15, 40, 20)];
+    preLabel.text = @"上一页";
+    preLabel.font = [UIFont systemFontOfSize:12.f];
+    preLabel.textColor = [UIColor whiteColor];
+    preLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:preLabel];
+    
+    UIButton *nextPPT = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    nextPPT.tag = 2;
+    nextPPT.frame = CGRectMake(XYQWidth / 2.0 + 65, XYQHeight / 2.0 - 15, 20, 30);
+    [nextPPT setBackgroundImage:[UIImage imageNamed:@"next"] forState:UIControlStateNormal];
+    [nextPPT setTintColor:[UIColor whiteColor]];
+    [nextPPT addTarget:self action:@selector(allPPT:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:nextPPT];
+    
+    UILabel *nextLabel = [[UILabel alloc] initWithFrame:CGRectMake(XYQWidth / 2.0 + 55, XYQHeight / 2.0 + 15, 40, 20)];
+    nextLabel.text = @"下一页";
+    nextLabel.font = [UIFont systemFontOfSize:12.f];
+    nextLabel.textColor = [UIColor whiteColor];
+    nextLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:nextLabel];
+    
     UIButton *firstPPT = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     firstPPT.tag = 3;
-    firstPPT.frame = CGRectMake(XYQWidth / 2 - XYQWidth / 3, XYQHeight / 2, XYQWidth / 4, XYQHeight / 20);
-    [firstPPT setTitle:@"第一页" forState:UIControlStateNormal];
+    firstPPT.frame = CGRectMake(XYQWidth / 2.0 - 12.5, XYQHeight / 2.0 - 100, 25, 30);
+    [firstPPT setBackgroundImage:[UIImage imageNamed:@"first"] forState:UIControlStateNormal];
     [firstPPT setTintColor:[UIColor whiteColor]];
     [firstPPT addTarget:self action:@selector(allPPT:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:firstPPT];
     
+    UILabel *firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(XYQWidth / 2.0 - 20, XYQHeight / 2.0 - 70, 40, 20)];
+    firstLabel.text = @"第一页";
+    firstLabel.font = [UIFont systemFontOfSize:12.f];
+    firstLabel.textColor = [UIColor whiteColor];
+    firstLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:firstLabel];
+    
     UIButton *lastPPT = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     lastPPT.tag = 4;
-    lastPPT.frame = CGRectMake(XYQWidth / 2 + XYQWidth / 8, XYQHeight / 2, XYQWidth / 4, XYQHeight / 20);
-    [lastPPT setTitle:@"最后一页" forState:UIControlStateNormal];
+    lastPPT.frame = CGRectMake(XYQWidth / 2.0 - 12.5, XYQHeight / 2.0 + 70, 25, 30);
+    [lastPPT setBackgroundImage:[UIImage imageNamed:@"last"] forState:UIControlStateNormal];
     [lastPPT setTintColor:[UIColor whiteColor]];
     [lastPPT addTarget:self action:@selector(allPPT:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:lastPPT];
+    
+    UILabel *lastLabel = [[UILabel alloc] initWithFrame:CGRectMake(XYQWidth / 2.0 - 30, XYQHeight / 2.0 + 100, 60, 20)];
+    lastLabel.text = @"最后一页";
+    lastLabel.font = [UIFont systemFontOfSize:12.f];
+    lastLabel.textColor = [UIColor whiteColor];
+    lastLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:lastLabel];
+    
+    UIButton *playPPT = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    playPPT.tag = 5;
+    playPPT.frame = CGRectMake(XYQWidth / 2.0 - 12.5, XYQHeight / 2.0 - 180, 30, 30);
+    [playPPT setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+    [playPPT setTintColor:[UIColor whiteColor]];
+    [playPPT addTarget:self action:@selector(allPPT:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:playPPT];
+    
+    UILabel *playLabel = [[UILabel alloc] initWithFrame:CGRectMake(XYQWidth / 2.0 - 20, XYQHeight / 2.0 - 150, 40, 20)];
+    playLabel.text = @"播放";
+    playLabel.font = [UIFont systemFontOfSize:12.f];
+    playLabel.textColor = [UIColor whiteColor];
+    playLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:playLabel];
     
     self.MyVC = [[XYQMyPCViewController alloc] init];
     self.MyVC.PPTOpera = @"PPTDO";
@@ -109,7 +159,7 @@
     
     switch (button.tag) {
         case 0:
-            [self.handle setTyp:@"Office" Msg:@"Close_PowerPoint"];
+            [self.handle setTyp:@"Cmd" Msg:@"Close_powerpnt"];
             break;
         case 1:
             [self.handle setTyp:@"Office" Msg:@"Up_PowerPoint"];
@@ -122,6 +172,9 @@
             break;
         case 4:
             [self.handle setTyp:@"Office" Msg:@"Last_PowerPoint"];
+            break;
+        case 5:
+            [self.handle setTyp:@"Office" Msg:@"Play_PowerPoint"];
             break;
         default:
             break;

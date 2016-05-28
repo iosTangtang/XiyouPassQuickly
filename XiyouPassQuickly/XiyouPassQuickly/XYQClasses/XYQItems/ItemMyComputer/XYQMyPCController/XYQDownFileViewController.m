@@ -35,7 +35,8 @@
         _progress.frame = CGRectMake(0, XYQHeight / 20 + XYQHeight / 28, XYQWidth, 0);
         _progress.trackTintColor = [UIColor whiteColor];
         _progress.progress = 0;
-        _progress.progressTintColor = [UIColor colorWithRed:121 / 255.0 green:211 / 255.0 blue:249 / 255.0 alpha:1];
+        _progress.transform = CGAffineTransformMakeScale(1.0f, 6.0f);
+        _progress.progressTintColor = [UIColor colorWithRed:62 / 255.0 green:230 / 255.0 blue:110 / 255.0 alpha:1];
     }
     return _progress;
 }
@@ -73,8 +74,8 @@
     [self.view addSubview:self.webView];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(19, XYQHeight / 28, 12, 23);
-    [button setBackgroundImage:[UIImage imageNamed:@"fa-angle-left"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(19, 20, 50, 20);
+    [button setTitle:@"取消" forState:UIControlStateNormal];
     [button setTintColor:[UIColor whiteColor]];
     [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
@@ -84,14 +85,6 @@
     self.titleLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.titleLabel];
-    
-    //初始化缓冲控件
-//    self.activity = [[UIActivityIndicatorView alloc]
-//                     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-//    self.activity.frame = CGRectMake(0, 0, XYQWidth / 6, XYQWidth / 6);
-//    self.activity.center = self.view.center;
-//    self.activity.backgroundColor = [UIColor lightGrayColor];
-//    [self.view addSubview:self.activity];
     
     //添加进度条
     [self.view addSubview:self.progress];
@@ -106,6 +99,12 @@
 
 #pragma mark ButtonAction
 - (void)buttonAction {
+    self.muData = nil;
+    self.icount = 0;
+    
+    XYQSocketManager *socketServer = [XYQSocketManager socketManager];
+    socketServer.socketFile.fileDelegate = nil;
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -134,24 +133,29 @@
     XYQSocketManager *socketServer = [XYQSocketManager socketManager];
     socketServer.socketFile.fileDelegate = self;
     [socketServer.socketFile sendMessage:jsonStr];
-//    [self.activity startAnimating];
 }
 
 #pragma mark - SocketFileDelegate
 - (void)getFileDataMessage:(NSData *)data {
     
-    self.icount++;
-    if (self.icount == 1) {
+    _icount++;
+    if (_icount == 1) {
+        _length = 0;
         [data getBytes:&_length length:sizeof(_length)];
         NSLog(@"----%d", _length);
-    } else if (self.icount > 1) {
+        self.muData = [NSMutableData data];
+        if (data.length > 4) {
+            NSMutableData *tempData = [NSMutableData dataWithData:data];
+            NSData *firstData = [tempData subdataWithRange:NSMakeRange(4, data.length - 4)];
+            [self.muData appendData:firstData];
+        }
+    } else {
         [self.muData appendData:data];
-        
-        //修改进度条的进度
         [self.progress setProgress:self.muData.length / (float)_length animated:YES];
         if (self.muData.length == _length) {
             NSLog(@"%lu", (unsigned long)self.muData.length);
             [self createFile];
+            self.muData = nil;
         }
     }
     
@@ -177,8 +181,6 @@
     NSString *pathStr = [NSString stringWithFormat:@"%@/%@", path, self.fileName];
     
     BOOL succeed = [self.muData writeToFile:pathStr atomically:YES];
-    
-//    [self.activity stopAnimating];
     
     if (succeed) {
         [self.progress removeFromSuperview];

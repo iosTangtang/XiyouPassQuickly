@@ -3,6 +3,30 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>音量减小</key>
+		<string>Cmd</string>
+		<key>音量增加</key>
+		<string>Cmd</string>
+		<key>播放</key>
+		<string>Cmd</string>
+		<key>全屏</key>
+		<string>Cmd</string>
+		<key>上个</key>
+		<string>Cmd</string>
+		<key>下个</key>
+		<string>Cmd</string>
+		<key>减小亮度</key>
+		<string>Cmd</string>
+		<key>增加亮度</key>
+		<string>Cmd</string>
+		<key>快退</key>
+		<string>Cmd</string>
+		<key>快进</key>
+		<string>Cmd</string>
+		<key>暂停</key>
+		<string>Cmd</string>
+		<key>停止</key>
+		<string>Cmd</string>
 		<key>打开腾讯微博</key>
 		<string>Web</string>
 		<key>打开京东</key>
@@ -43,9 +67,9 @@
 		<string>Office</string>
 		<key>关闭ｐｐｔ</key>
 		<string>Office</string>
-		<key>上一页ｐｐｔ</key>
+		<key>上页ｐｐｔ</key>
 		<string>Office</string>
-		<key>下一页ｐｐｔ</key>
+		<key>下页ｐｐｔ</key>
 		<string>Office</string>
 		<key>打开ｃ盘</key>
 		<string>Cmd</string>
@@ -103,15 +127,11 @@
 		<string>Cmd</string>
 		<key>关闭记事本</key>
 		<string>Cmd</string>
-		<key>关闭录音机</key>
-		<string>Cmd</string>
 		<key>关闭命令提示符</key>
 		<string>Cmd</string>
 		<key>关闭写字板</key>
 		<string>Cmd</string>
 		<key>关闭远程桌面连接</key>
-		<string>Cmd</string>
-		<key>关闭运行</key>
 		<string>Cmd</string>
 		<key>关闭任务管理器</key>
 		<string>Cmd</string>
@@ -125,6 +145,30 @@
 		<string>Cmd</string>
 	</dict>
 	<dict>
+		<key>音量减小</key>
+		<string>Video_Volumnreduce</string>
+		<key>音量增加</key>
+		<string>Video_Volumnincrease</string>
+		<key>播放</key>
+		<string>Video_Play</string>
+		<key>全屏</key>
+		<string>Video_AllScreen</string>
+		<key>上个</key>
+		<string>Video_PageUp</string>
+		<key>下个</key>
+		<string>Video_PageDown</string>
+		<key>减小亮度</key>
+		<string>Video_Brightreduce</string>
+		<key>增加亮度</key>
+		<string>Video_Brightincrease</string>
+		<key>快退</key>
+		<string>Video_Backward</string>
+		<key>快进</key>
+		<string>Video_Forward</string>
+		<key>暂停</key>
+		<string>Video_Pause</string>
+		<key>停止</key>
+		<string>Video_Stop</string>
 		<key>打开腾讯微博</key>
 		<string>Open_TencentWeibo</string>
 		<key>打开京东</key>
@@ -146,9 +190,9 @@
 		<key>打开百度</key>
 		<string>Open_Baidu</string>
 		<key>播放ｐｐｔ</key>
-		<string>Play_powerpnt</string>
+		<string>Play_PowerPoint</string>
 		<key>放映幻灯片</key>
-		<string>Play_powerpnt</string>
+		<string>Play_PowerPoint</string>
 		<key>关闭ｅｘｃｅｌ</key>
 		<string>Close</string>
 		<key>关闭ｗｏｒｄ</key>
@@ -165,9 +209,9 @@
 		<string>Frist_PowerPoint</string>
 		<key>关闭ｐｐｔ</key>
 		<string>Close_PowerPoint</string>
-		<key>上一页ｐｐｔ</key>
+		<key>上页ｐｐｔ</key>
 		<string>Up_PowerPoint</string>
-		<key>下一页ｐｐｔ</key>
+		<key>下页ｐｐｔ</key>
 		<string>Down_PowerPoint</string>
 		<key>打开ｃ盘</key>
 		<string>Win_DiskC</string>
@@ -220,31 +264,27 @@
 		<key>打开控制面板</key>
 		<string>Win_control</string>
 		<key>关闭画图</key>
-		<string>Close</string>
+		<string>Close_mspaint</string>
 		<key>关闭计算器</key>
-		<string>Close</string>
+		<string>Close_calc</string>
 		<key>关闭记事本</key>
-		<string>Close</string>
-		<key>关闭录音机</key>
-		<string>Close</string>
+		<string>Close_notepad</string>
 		<key>关闭命令提示符</key>
-		<string>Close</string>
+		<string>Close_cmd</string>
 		<key>关闭写字板</key>
-		<string>Close</string>
+		<string>Close_write</string>
 		<key>关闭远程桌面连接</key>
-		<string>Close</string>
-		<key>关闭运行</key>
-		<string>Close</string>
+		<string>Close_mstsc</string>
 		<key>关闭任务管理器</key>
-		<string>Close</string>
+		<string>Close_taskmgr</string>
 		<key>关闭资源管理器</key>
-		<string>Close</string>
+		<string>Close_explorer</string>
 		<key>关闭设备管理器</key>
-		<string>Close</string>
+		<string>Close_devmgmt.msc</string>
 		<key>关闭ｉｅ浏览器</key>
-		<string>Close</string>
+		<string>Close_iexplore.exe</string>
 		<key>关闭控制面板</key>
-		<string>Close</string>
+		<string>Close_control</string>
 	</dict>
 </array>
 </plist>

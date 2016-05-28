@@ -45,9 +45,10 @@
     self.downLoadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.downLoadButton.frame = CGRectMake(self.contentView.frame.size.width -
                                            self.contentView.frame.size.height / 10 * 6 - 10,
-                                           self.contentView.frame.size.height / 10 * 2,
+                                           self.contentView.frame.size.height / 10 * 1,
                                            self.contentView.frame.size.height / 10 * 6,
                                            self.contentView.frame.size.height / 10 * 6);
+//    self.downLoadButton.backgroundColor = [UIColor redColor];
     [self.downLoadButton setBackgroundImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
     [self.downLoadButton addTarget:self action:@selector(downLoadButtonEvent:)
                   forControlEvents:UIControlEventTouchUpInside];

@@ -11,7 +11,7 @@
 #import "SystemFunctions.h"
 #import "XYQSocketManager.h"
 
-@interface XYQConServerViewController ()<UITextFieldDelegate, SocketFileDelegate>
+@interface XYQConServerViewController ()<UITextFieldDelegate, SocketCmdDelegate>
 
 @property (nonatomic, strong) UITextField               *ipTextField;
 @property (nonatomic, strong) UITextField               *portTextField;
@@ -117,7 +117,9 @@
     [scan successfulGetQRCodeInfo:^(NSString *QRCodeInfo) {
         weakSelf.ipTextField.text = QRCodeInfo;
         XYQSocketManager *socketServer = [XYQSocketManager socketManager];
-        socketServer.socketFile.fileDelegate = self;
+        socketServer.socketCmd.socketDelegate = self;
+        [socketServer.socketCmd cutOffServer];
+        [socketServer.socketFile cutOffServer];
         [socketServer.socketCmd startConnectedServer:weakSelf.ipTextField.text Port:[weakSelf.portTextField.text intValue]];
         [socketServer.socketFile startConnectedServer:weakSelf.ipTextField.text
                                                  Port:[weakSelf.portTextField.text intValue] + 1];
@@ -133,7 +135,9 @@
         [self showErrorMessage:@"IP地址或端口号为空"];
     } else {
         XYQSocketManager *socketServer = [XYQSocketManager socketManager];
-        socketServer.socketFile.fileDelegate = self;
+        socketServer.socketCmd.socketDelegate = self;
+        [socketServer.socketCmd cutOffServer];
+        [socketServer.socketFile cutOffServer];
         [socketServer.socketCmd startConnectedServer:self.ipTextField.text Port:[self.portTextField.text intValue]];
         [socketServer.socketFile startConnectedServer:self.ipTextField.text
                                                  Port:[self.portTextField.text intValue] + 1];
@@ -168,11 +172,11 @@
 }
 
 #pragma mark SocketCmdDelegate
-- (void)getFileDataMessage:(NSData *)data {
+- (void)getCmdDataMessage:(NSData *)data {
     
 }
 
-- (void)getFileConnectionMessage:(NSString *)string {
+- (void)getCmdConnectionMessage:(NSString *)string {
     [self.activity stopAnimating];
     self.connectButton.enabled = YES;
     if ([string isEqualToString:@"链接服务器成功"]) {

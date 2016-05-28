@@ -15,7 +15,10 @@
 static NSString *const kFileListTableViewCell = @"XYQFileListTableViewCell.h";
 
 @interface XYQFileListViewController ()<UITableViewDelegate, UITableViewDataSource, SocketCmdDelegate,
-                                        FileTableViewCellDelegate, SocketFileDelegate>
+                                        FileTableViewCellDelegate, SocketFileDelegate>{
+    int _icount;
+    int _length;
+}
 
 @property (nonatomic, strong) UITableView               *tableView;
 @property (nonatomic, strong) NSMutableArray            *jsonArray;
@@ -35,18 +38,13 @@ static NSString *const kFileListTableViewCell = @"XYQFileListTableViewCell.h";
     return _jsonArray;
 }
 
-- (NSMutableData *)muData {
-    if (_muData == nil) {
-        _muData = [NSMutableData data];
-    }
-    return _muData;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.haveFolder = YES;
+    _icount = 0;
+    self.muData = [NSMutableData data];
     
     self.title = self.rootDisk.Name;
     
@@ -142,10 +140,6 @@ static NSString *const kFileListTableViewCell = @"XYQFileListTableViewCell.h";
 - (void)getTableViewMessage {
     Byte *byte = (Byte *)[self.muData bytes];
     NSString *string = [[NSString alloc] initWithBytes:byte length:self.muData.length encoding:NSUTF8StringEncoding];
-    if (self.muData.length <= 4) {
-        self.muData = [NSMutableData data];
-        return;
-    }
     
     NSArray *codeArray = [string componentsSeparatedByString:@"#"];
     NSString *codeString = codeArray[1];
@@ -179,11 +173,23 @@ static NSString *const kFileListTableViewCell = @"XYQFileListTableViewCell.h";
 #pragma mark SocketDiskDelegate
 - (void)getCmdDataMessage:(NSData *)data {
     
-    [self.muData appendData:data];
-    
-    //如果接收的数据小于1024 说明已经接收完成
-    if (data.length < 1024) {
-        [self getTableViewMessage];
+    _icount++;
+    if (_icount == 1) {
+        _length = 0;
+        [data getBytes:&_length length:sizeof(_length)];
+        self.muData = [NSMutableData data];
+        if (data.length > 4) {
+            NSMutableData *tempData = [NSMutableData dataWithData:data];
+            NSData *firstData = [tempData subdataWithRange:NSMakeRange(4, data.length - 4)];
+            [self.muData appendData:firstData];
+        }
+        [self.activity startAnimating];
+    } else {
+        [self.muData appendData:data];
+        if (self.muData.length == _length) {
+            [self.activity stopAnimating];
+            [self getTableViewMessage];
+        }
     }
     
 }

@@ -11,8 +11,10 @@
 #import "XYQShotScreenViewController.h"
 #import "XYQShutdownPCViewController.h"
 #import "XYQCtrPPTViewController.h"
+#import "XYQVoiceChangeViewController.h"
+#import "XYQSocketManager.h"
 
-@interface XYQCtrPCViewController ()
+@interface XYQCtrPCViewController ()<SocketCmdDelegate>
 
 @end
 
@@ -20,6 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    XYQSocketManager *socket = [XYQSocketManager socketManager];
+    socket.socketCmd.socketDelegate = self;
     
     [self p_initButton];
 }
@@ -35,7 +40,7 @@
     imageView.image = [UIImage imageNamed:@"Rectangle 1"];
     [self.view addSubview:imageView];
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         button.frame = CGRectMake(i % 2 == 0 ? XYQWidth / 6 : XYQWidth / 2 + XYQWidth / 10,
                                   i % 2 == 0 ? XYQHeight / 4 + XYQHeight / 4 * (i / 2) :
@@ -65,6 +70,25 @@
     } else if (button.tag == 4) {
         XYQCtrPPTViewController *pptVC = [[XYQCtrPPTViewController alloc] init];
         [self.navigationController pushViewController:pptVC animated:YES];
+    } else if (button.tag == 5) {
+        XYQVoiceChangeViewController *voiceVC = [[XYQVoiceChangeViewController alloc] init];
+        [self.navigationController pushViewController:voiceVC animated:YES];
+    }
+}
+
+#pragma mark - socketCmd Delegate
+- (void)getCmdDataMessage:(NSData *)data {
+    
+}
+
+- (void)getCmdConnectionMessage:(NSString *)string {
+    if ([string isEqualToString:@"链接服务器失败"]) {
+        XYQSocketManager *socketServer = [XYQSocketManager socketManager];
+        [socketServer.socketCmd cutOffServer];
+        [socketServer.socketFile cutOffServer];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        NSNotification *notification = [NSNotification notificationWithName:@"ConnectionFailed" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
     }
 }
 

@@ -76,14 +76,14 @@
 
 //发送消息成功之后回调
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
-    [self readDataWithTimeout:-1 buffer:nil bufferOffset:0 maxLength:10240 tag:0];
+    [self readDataWithTimeout:-1 buffer:nil bufferOffset:0 maxLength:10240 tag:1];
 }
 
 //接收消息成功之后回调
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
     
     [self.fileDelegate getFileDataMessage:data];
-    [self readDataWithTimeout:READ_TIME_OUT buffer:nil bufferOffset:0 maxLength:10240 tag:0];
+    [self readDataWithTimeout:READ_TIME_OUT buffer:nil bufferOffset:0 maxLength:10240 tag:1];
     
 }
 

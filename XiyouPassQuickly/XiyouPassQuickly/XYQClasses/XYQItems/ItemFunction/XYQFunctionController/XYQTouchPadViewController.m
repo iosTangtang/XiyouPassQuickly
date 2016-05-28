@@ -127,6 +127,8 @@
     XYQCommomModel *comm = [[XYQCommomModel alloc] initWithFlag:@"3" Msg:@"0,0,Left,"];
     NSString *sendStr = [comm toJSONString];
     NSString *comStr = [NSString stringWithFormat:@"XiYou#%@",sendStr];
+    
+    NSLog(@"%@", comStr);
     [self.socketServer.socketCmd sendMessage:comStr];
 }
 
@@ -167,7 +169,7 @@ static float scale = 0;
     
     XYQCommomModel *comm = [[XYQCommomModel alloc] initWithFlag:@"3" Msg:[NSString stringWithFormat:@"%f,%f,%@,",
                                                               afterLocation.x - self.location.x,
-                                                              afterLocation.y - self.location.y,
+                                                              (afterLocation.y - self.location.y),
                                                               @"Move"]];
     NSString *sendStr = [comm toJSONString];
     NSString *comStr = [NSString stringWithFormat:@"XiYou#%@",sendStr];
